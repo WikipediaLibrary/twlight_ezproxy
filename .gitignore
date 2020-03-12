@@ -1,0 +1,5 @@
+# Contains sensitive authentication configuration.
+ezproxy.usr
+
+*.swp
+.idea/

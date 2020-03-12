@@ -1,0 +1,22 @@
+<html>
+<head>
+<LINK href="public/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--
+This is loginbu.htm from the docs subdirectory.  This file is sent if the
+username/password provided is not valid.
+-->
+<img src="/public/logo.png">
+<hr />
+<p>
+<strong>That username or password was incorrect. Please try again.</strong>
+</p>
+<form action="/login" method="post">
+<input type="hidden" name="url" value="^U" />
+Please enter your username: <input type="text"     name="user" /><br>
+Please enter your password: <input type="password" name="pass" /><br>
+<input type="submit" value="Login" />
+</form>
+</body>
+</html>

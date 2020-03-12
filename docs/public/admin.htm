@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Access</title>
+<LINK href="public/OCLCstyle.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<img src="/public/OCLClogo.gif" width="100">
+<h1> Access Hosted EZproxy Logs </h1>
+<form action="^{server:url:strongest}/login" method="post">
+<input type="hidden" name="url" value="^{server:url:strongest}/loggedin/hezpadmin.htm"/>
+Username: <input type="text" name="user"/><br/>
+Password: <input type="password" name="pass"/><br/>
+<input type="submit" value="Log in"/>
+</form>
+<p>
+If your username or password is entered incorrectly and you fail to log in,
+you should use your back button to return to this page to try again.
+</p>
+</html>

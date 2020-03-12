@@ -1,0 +1,70 @@
+<html>
+<head>
+<LINK href="public/style.css" rel="stylesheet" type="text/css">
+<title>Database Menu</title>
+</head>
+<body>
+
+<hr />
+
+^{session:admin ? '<p><a href="/admin">Admin </a> </p>' : ''}
+<h1>Important! Please Read</h1>
+
+<p>
+This page is the default menu of databases. The URLs here DO NOT necessarily reflect the URLs you will
+use on your e-resources page. To test your URLs, DO NOT use the links below.
+Instead, please prepend your proxy prefix to the link you want to test and test
+directly in your browser. So if you
+are testing:
+</p>
+<p>
+<code>http://www.somehost.com/somedirectory/somefile.htm</code>
+</p>
+<p> prepend your proxy prefix:</p>
+<code>^{server:url:http}/login?url=</code><br />
+(note: you can also use https. Either way, your users will be directed to a secure link for login.)
+
+</p>
+<p>to get:</p>
+<p>
+<code>
+^{server:url:http}/login?url=http://www.somehost.com/somedirectory/somefile.htm
+</code>
+</p>
+
+<p>
+Cut and paste this link directly into your browser to test it.
+</p>
+
+<br/>
+<br/>
+<p>This is how you will build the links for your e-resources
+page. It is recommended for testing that you build an entire page of the links you want
+to test, as you may need to test several times, or with several people (preferably both.)
+</p>
+
+<p>
+While the use of this menu page is strongly discouraged in your hosted EZproxy production
+environment, we can make exceptions if you are unable to host your own menu page. However,
+in this case, you will need to provide us with the html for the menu page you wish to use, 
+including static links to all of your proxied resources.
+We do not support the use of the automatically generated menu page.
+</p>
+
+<p></p>
+
+<p align=center>
+<b>Database Menu</b>
+</p>
+
+
+<p>
+
+^B
+<a href="^P/login?url=^V">^T</a><br>
+^E
+
+</p>
+
+</body>
+</html>
