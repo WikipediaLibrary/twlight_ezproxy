@@ -1,5 +1,8 @@
 # Contains sensitive authentication configuration.
 ezproxy.usr
 
+# contains environment specific deployment flag.
+flag.txt
+
 *.swp
 .idea/
