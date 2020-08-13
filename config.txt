@@ -1,5 +1,6 @@
 # DO NOT UPLOAD TO HOSTED EZPROXY.
 # Here for compatibility. Place all resource config in ezproxy.cfg.
 Name localhost
+IncludeIP 127.0.0.1
 LoginPort 2048
 IncludeFile ezproxy.cfg
