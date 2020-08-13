@@ -1,3 +1,11 @@
+# Assets for local EZproxy binary
+ezproxy
+wskey.key
+ezproxy.hst
+ezproxy.log
+ezproxy.rnd
+messages.txt
+
 # Contains sensitive authentication configuration.
 ezproxy.usr
 

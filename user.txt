@@ -1,0 +1,14 @@
+# DO NOT UPLOAD TO HOSTED EZPROXY.
+# Here for compatibility. Place all user config in ezproxy.usr
+
+::auth=local,CGI=http://localhost/ezproxy/r/^R
+::Ticket
+AcceptGroups BUNDLE+P24+P49+P101+P60+P62+P48+P11+P47+P73+P74+P75+P76+P63+P31+P59+P14+P58+P15+P71+P9+P23+P23S7+P23S8+P23S9+P56+P44+P43+P22S17+P22S18+P55+P29+P42+P77+P41+P53+P27+P17+P39+P38+P37+P69+P20+P21+P50+P36+P67S28+P67S29+P10+P19
+TimeValid 60
+SHA512 twlight
+Expired; Deny expiredticket.htm
+IfAuthenticated; Admin
+IfUnauthenticated; Stop
+/Ticket
+
+IncludeFile ezproxy.usr
