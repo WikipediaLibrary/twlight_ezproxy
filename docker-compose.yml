@@ -1,0 +1,52 @@
+---
+
+version: '3.2'
+
+# Local environment should mount plaintext files as secrets
+secrets:
+  EZPROXY_SECRET:
+    file: ./secrets/EZPROXY_SECRET
+  EZPROXY_WSKEY:
+    file: ./secrets/EZPROXY_WSKEY
+
+services:
+  dns:
+    image: defreitas/dns-proxy-server:2.19.0
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/resolv.conf:/etc/resolv.conf
+      - type: bind
+        source: ./conf/local.dns.json
+        target: /app/conf/config.json
+    environment:
+      - MG_LOG_LEVEL=ERROR
+    hostname: dns.mageddo
+    ports:
+        - "5380:5380"
+        - "53:53/udp"
+    networks:
+      dns:
+        ipv4_address: "172.0.0.10"
+  ezproxy:
+    build:
+      context: .
+    command: /usr/local/ezproxy/ezproxy
+    volumes:
+      - type: bind
+        source: .
+        target: /usr/local/ezproxy
+    ports:
+      - "2048:2048"
+      - "2443:2443"
+    secrets:
+      - EZPROXY_SECRET
+      - EZPROXY_WSKEY
+    networks:
+        - dns
+    dns:
+      - 172.0.0.10
+networks:
+  dns:
+    ipam:
+      config:
+        - subnet: 172.0.0.0/24
