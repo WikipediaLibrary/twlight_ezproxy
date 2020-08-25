@@ -6,7 +6,6 @@ ezproxy.hst
 ezproxy.log
 ezproxy.rnd
 messages.txt
-secrets/
 ssl/
 
 # Contains sensitive authentication configuration.
