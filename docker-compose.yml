@@ -11,25 +11,37 @@ secrets:
 
 services:
   dns:
-    image: defreitas/dns-proxy-server:2.19.0
+    build:
+      context: docker
+      dockerfile: dnsmasq.Dockerfile
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
       - /etc/resolv.conf:/etc/resolv.conf
       - type: bind
-        source: ./conf/local.dns.json
-        target: /app/conf/config.json
-    environment:
-      - MG_LOG_LEVEL=ERROR
-    hostname: dns.mageddo
-    ports:
-        - "5380:5380"
-        - "53:53/udp"
+        source: ./docker/conf/local.dns.conf
+        target: /etc/dnsmasq.d/00-local.conf
     networks:
       dns:
         ipv4_address: "172.0.0.10"
+  socks:
+    build:
+      context: docker
+      dockerfile: socks.Dockerfile
+    volumes:
+      - type: bind
+        source: ./docker/conf/sshd_config
+        target: /etc/ssh/sshd_config
+    ports:
+      - "2022:2022"
+    networks:
+      - dns
+    dns:
+      - 172.0.0.10
+    depends_on:
+      - dns
   ezproxy:
     build:
-      context: .
+      context: docker
+      dockerfile: ezproxy.Dockerfile
     command: /usr/local/ezproxy/ezproxy
     volumes:
       - type: bind
@@ -42,9 +54,12 @@ services:
       - EZPROXY_SECRET
       - EZPROXY_WSKEY
     networks:
-        - dns
+      dns:
+        ipv4_address: "172.0.0.11"
     dns:
       - 172.0.0.10
+    depends_on:
+      - socks
 networks:
   dns:
     ipam:
