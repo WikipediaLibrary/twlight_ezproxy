@@ -42,7 +42,7 @@ services:
     build:
       context: docker
       dockerfile: ezproxy.Dockerfile
-    command: /usr/local/ezproxy/ezproxy
+    command: /ezproxy.entrypoint.sh
     volumes:
       - type: bind
         source: .
