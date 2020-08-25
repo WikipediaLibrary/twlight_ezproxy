@@ -5,9 +5,9 @@ version: '3.2'
 # Local environment should mount plaintext files as secrets
 secrets:
   EZPROXY_SECRET:
-    file: ./secrets/EZPROXY_SECRET
+    file: ./docker/secrets/EZPROXY_SECRET
   EZPROXY_WSKEY:
-    file: ./secrets/EZPROXY_WSKEY
+    file: ./docker/secrets/EZPROXY_WSKEY
 
 services:
   dns:
@@ -31,7 +31,7 @@ services:
         source: ./docker/conf/sshd_config
         target: /etc/ssh/sshd_config
     ports:
-      - "2022:2022"
+      - "2080:2080"
     networks:
       - dns
     dns:
