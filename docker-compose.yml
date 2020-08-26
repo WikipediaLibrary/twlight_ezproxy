@@ -45,8 +45,11 @@ services:
     command: /ezproxy.entrypoint.sh
     volumes:
       - type: bind
-        source: .
+        source: ./docker/ezproxy-local
         target: /usr/local/ezproxy
+      - type: bind
+        source: ./expert
+        target: /opt/ezproxy/expert
     ports:
       - "2048:2048"
       - "2443:2443"
