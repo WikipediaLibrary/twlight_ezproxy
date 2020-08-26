@@ -1,0 +1,62 @@
+---
+
+version: '3.2'
+
+services:
+  dns:
+    build:
+      context: docker
+      dockerfile: dnsmasq.Dockerfile
+    volumes:
+      - /etc/resolv.conf:/etc/resolv.conf
+      - type: bind
+        source: ./docker/conf/local.dns.conf
+        target: /etc/dnsmasq.d/00-local.conf
+    networks:
+      dns:
+        ipv4_address: "172.0.0.10"
+  socks:
+    build:
+      context: docker
+      dockerfile: socks.Dockerfile
+    volumes:
+      - type: bind
+        source: ./docker/conf/sshd_config
+        target: /etc/ssh/sshd_config
+    ports:
+      - "2080:2080"
+    networks:
+      - dns
+    dns:
+      - 172.0.0.10
+    depends_on:
+      - dns
+  ezproxy:
+    build:
+      context: docker
+      dockerfile: ezproxy.Dockerfile
+    command: /ezproxy.entrypoint.sh
+    volumes:
+      - type: bind
+        source: ./docker/ezproxy-local
+        target: /usr/local/ezproxy
+      - type: bind
+        source: ./expert
+        target: /opt/ezproxy/expert
+    ports:
+      - "2048:2048"
+      - "2443:2443"
+    env_file:
+      - '.env'
+    networks:
+      dns:
+        ipv4_address: "172.0.0.11"
+    dns:
+      - 172.0.0.10
+    depends_on:
+      - socks
+networks:
+  dns:
+    ipam:
+      config:
+        - subnet: 172.0.0.0/24

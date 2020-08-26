@@ -1,0 +1,29 @@
+{
+  "import-2986850559": {
+    "active": true,
+    "address": "localhost",
+    "blackPatterns": [],
+    "color": "#e50000",
+    "index": 0,
+    "pacURL": "",
+    "password": "",
+    "port": 2080,
+    "proxyDNS": true,
+    "title": "ezproxy.dev.localdomain",
+    "type": 3,
+    "username": "",
+    "whitePatterns": [
+      {
+        "title": "ezproxy.dev.localdomain",
+        "pattern": "*.ezproxy.dev.localdomain:*",
+        "type": 1,
+        "protocols": 1,
+        "active": true
+      }
+    ]
+  },
+  "mode": "patterns",
+  "browserVersion": "79.0",
+  "foxyProxyVersion": "7.5.1",
+  "foxyProxyEdition": "standard"
+}
