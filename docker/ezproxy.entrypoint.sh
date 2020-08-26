@@ -15,7 +15,7 @@ fi
 
 if [ ! -f /usr/local/ezproxy/wskey.key ]
 then
-  /usr/local/ezproxy/ezproxy -k $(cat /var/run/secrets/EZPROXY_WSKEY)
+  /usr/local/ezproxy/ezproxy -k ${EZPROXY_WSKEY}
 fi
 
 /usr/local/ezproxy/ezproxy

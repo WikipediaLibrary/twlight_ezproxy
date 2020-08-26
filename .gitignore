@@ -12,6 +12,7 @@ ssl/
 
 # Contains sensitive authentication configuration.
 ezproxy.usr
+.env
 
 # contains environment specific deployment flag.
 flag.txt

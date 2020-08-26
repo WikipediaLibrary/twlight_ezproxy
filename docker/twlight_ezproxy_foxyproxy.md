@@ -11,7 +11,7 @@ You can import the [twlight_ezproxy FoxyProxy settings file](twlight_ezproxy_fox
 Proxy:
 
 ```
-Title:      ezproxy.localdomain
+Title:      ezproxy.dev.localdomain
 Proxy Type: SOCKS5
 Proxy DNS?: On (Firefox only)
 IP Address: 127.0.0.1
@@ -21,8 +21,8 @@ Port:       2080
 White Patterns:
 
 ```
-Name:       ezproxy.localdomain
-Pattern:    *.ezproxy.localdomain:*
+Name:       ezproxy.dev.localdomain
+Pattern:    *.ezproxy.dev.localdomain:*
 Type:       wildcard
 http(s):    all
 On/Off:     on

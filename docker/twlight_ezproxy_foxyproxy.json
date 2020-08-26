@@ -9,13 +9,13 @@
     "password": "",
     "port": 2080,
     "proxyDNS": true,
-    "title": "ezproxy.localdomain",
+    "title": "ezproxy.dev.localdomain",
     "type": 3,
     "username": "",
     "whitePatterns": [
       {
-        "title": "ezproxy.localdomain",
-        "pattern": "*.ezproxy.localdomain:*",
+        "title": "ezproxy.dev.localdomain",
+        "pattern": "*.ezproxy.dev.localdomain:*",
         "type": 1,
         "protocols": 1,
         "active": true

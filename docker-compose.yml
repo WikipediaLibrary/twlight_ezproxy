@@ -2,13 +2,6 @@
 
 version: '3.2'
 
-# Local environment should mount plaintext files as secrets
-secrets:
-  EZPROXY_SECRET:
-    file: ./docker/secrets/EZPROXY_SECRET
-  EZPROXY_WSKEY:
-    file: ./docker/secrets/EZPROXY_WSKEY
-
 services:
   dns:
     build:
@@ -53,9 +46,8 @@ services:
     ports:
       - "2048:2048"
       - "2443:2443"
-    secrets:
-      - EZPROXY_SECRET
-      - EZPROXY_WSKEY
+    env_file:
+      - '.env'
     networks:
       dns:
         ipv4_address: "172.0.0.11"
