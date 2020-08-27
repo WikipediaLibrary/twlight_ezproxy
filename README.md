@@ -20,6 +20,10 @@ If no predefined stanza is available, contact the resource provider to see if th
 
 If the resource provider is unable to help, you'll need to create a new configuration. The documentation for [starting point URLS and config.txt](https://help.oclc.org/Library_Management/EZproxy/EZproxy_configuration/Starting_point_URLs_and_config_txt) is a great place to start learning about EZproxy resource configuration.
 
+## Customizing the user interface
+
+See the [Default Web Pages](https://help.oclc.org/Library_Management/EZproxy/Manage_EZproxy/Default_web_pages) documentation for modifying the user interface.
+
 ## Local configuration testing
 
   - Get Docker and Docker Compose
