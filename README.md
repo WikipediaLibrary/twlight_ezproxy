@@ -4,7 +4,7 @@ EZproxy Configuration for the Wikipedia Library.
 
 ## Documentation
 
-See the [EZproxy Documentation](https://help.oclc.org/Library_Management/EZproxy) for instructions on installing and configuring EZproxy in this directory.
+See the [EZproxy Documentation](https://help.oclc.org/Library_Management/EZproxy) for additional EZproxy configuration details.
 
 ## Local configuration testing
 
@@ -18,3 +18,17 @@ See the [EZproxy Documentation](https://help.oclc.org/Library_Management/EZproxy
   - [restart ezproxy](http://ezproxy.dev.localdomain:2048/restart)
   - [logout](http://ezproxy.dev.localdomain:2048/logout) from the local ezproxy admin account.
   - test against locally running twlight instance.
+
+## Adding new proxied resources
+
+Resources are defined in [ezproxy.cfg](expert/ezproxy.cfg).
+OCLC maintains a list of [predefined Database stanzas](https://help.oclc.org/Library_Management/EZproxy/Database_stanzas) which it updates over time.
+Many of these stanzas are available as include files in the hosted environment.
+When adding or updating a resource, always check for a hosted include file first and simply add a reference to it if possible. 
+If you add a reference to a hosted include file in [ezproxy.cfg](expert/ezproxy.cfg), you must add a corresponding empty file to the expert/databases directory to allow a local ezproxy instance to start.
+
+If a predifined stanza is available, but no hosted include file is available, simply copy the stanza into [ezproxy.cfg](expert/ezproxy.cfg). These should be periodically checked for updates.
+
+If no predefined stanza is available, contact the resource provider to see if they already have a suitable configuration. If so, copy that stanza into [ezproxy.cfg](expert/ezproxy.cfg) and test.
+
+If the resource provider is unable to help, you'll need to create a new configuration. The documentation for [starting point URLS and config.txt](https://help.oclc.org/Library_Management/EZproxy/EZproxy_configuration/Starting_point_URLs_and_config_txt) is a great place to start learning about EZproxy resource configuration.
