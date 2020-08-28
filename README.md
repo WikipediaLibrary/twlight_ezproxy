@@ -33,6 +33,10 @@ See the [Default Web Pages](https://help.oclc.org/Library_Management/EZproxy/Man
   - [twlight_ezproxy FoxyProxy Configuration](docker/twlight_ezproxy_foxyproxy.md)
   - Sign into the [admin interface](http://ezproxy.dev.localdomain:2048/admin) with username `twlight` and password `twlight`
   - Add a [self-signed wildcard certificate to EZproxy](http://ezproxy.dev.localdomain:2048/ssl-new) for `*.ezproxy.dev.localdomain` see [ezproxy ssl documentation](https://help.oclc.org/Library_Management/EZproxy/Secure_your_EZproxy_server/010SSL_configuration)
+    - fill in all non-optional text fields
+    - Certificate name: `*.ezproxy.dev.localdomain`
+    - Subject Alternate Name: check the boxes for both options
+    - Create: Self-Signed Certficate
   - [restart ezproxy](http://ezproxy.dev.localdomain:2048/restart)
   - [logout](http://ezproxy.dev.localdomain:2048/logout) from the local ezproxy admin account.
   - test against locally running twlight instance.
