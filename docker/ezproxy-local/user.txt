@@ -1,7 +1,9 @@
 # DO NOT UPLOAD TO HOSTED EZPROXY.
 # Here for compatibility. Place all user config in ezproxy.usr
 
+::group=BUNDLE
 twlight:twlight:admin
+::group=Default
 
 ::auth=local,CGI=http://localhost/ezproxy/r/^R
 ::Ticket

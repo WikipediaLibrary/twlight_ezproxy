@@ -38,8 +38,13 @@ See the [Default Web Pages](https://help.oclc.org/Library_Management/EZproxy/Man
     - Subject Alternate Name: check the boxes for both options
     - Create: Self-Signed Certficate
   - [restart ezproxy](http://ezproxy.dev.localdomain:2048/restart)
+
+If you will be doing end-to-end testing with TWLight:
   - [logout](http://ezproxy.dev.localdomain:2048/logout) from the local ezproxy admin account.
-  - test against locally running twlight instance.
+  - test against your account in a locally running twlight instance.
+
+If you are just testing resource configuration:
+  - go to the [ezproxy menu](http://ezproxy.dev.localdomain:2048/menu) and select a resource from the `BUNDLE` resource group. The local ezproxy admin account has access to `BUNDLE` resources.
 
 ## Deploying changes to the hosted EZproxy environment
 
