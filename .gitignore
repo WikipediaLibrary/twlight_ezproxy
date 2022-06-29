@@ -1,5 +1,6 @@
 # Assets for local EZproxy binary
 ezproxy
+ezproxy.ftl
 ezproxy.ipc
 ezproxy.hst
 ezproxy.log
@@ -8,6 +9,8 @@ ezproxy-linux.bin
 ezproxy-linux-sha256sum.txt
 messages.txt
 wskey.key
+environment/
+security/
 ssl/
 
 # Contains sensitive authentication configuration.

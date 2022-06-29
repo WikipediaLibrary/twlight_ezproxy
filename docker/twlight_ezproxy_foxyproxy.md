@@ -12,6 +12,7 @@ Proxy:
 
 ```
 Title:      ezproxy.dev.localdomain
+SOCKS proxy?: On (Chrome/Edge only)
 Proxy Type: SOCKS5
 Proxy DNS?: On (Firefox only)
 IP Address: 127.0.0.1
@@ -21,16 +22,23 @@ Port:       2080
 White Patterns:
 
 ```
-Name:       ezproxy.dev.localdomain
+Name:       *.ezproxy.dev.localdomain
 Pattern:    *.ezproxy.dev.localdomain:*
 Type:       wildcard
 http(s):    all
-On/Off:     on
+On/Off:     On
+```
+```
+Name:       ezproxy.dev.localdomain
+Pattern:    ezproxy.dev.localdomain:*
+Type:       wildcard
+http(s):    all
+On/Off:     On
 ```
 
-## A note on FoxyProxy Standard for Chrome
+## A note on FoxyProxy Standard for Chrome/Edge
 
-The Chrome version is more fiddly to setup, as you must set a shortcut to include the [--host-resolver-rules](https://www.chromium.org/developers/design-documents/network-stack/socks-proxy) flag due to the way the browser handles DNS. On Windows, the Start Menu shortcut for Chrome is located in the following location:
+The Chrome/Edge version is more fiddly to setup, as you must set a shortcut to include the [--host-resolver-rules](https://www.chromium.org/developers/design-documents/network-stack/socks-proxy) flag due to the way the browser handles DNS. On Windows, the Start Menu shortcut for Chrome is located in the following location:
 
 ```
 %programdata%\Microsoft\Windows\Start Menu\Programs

@@ -14,8 +14,15 @@
     "username": "",
     "whitePatterns": [
       {
-        "title": "ezproxy.dev.localdomain",
+        "title": "*.ezproxy.dev.localdomain",
         "pattern": "*.ezproxy.dev.localdomain:*",
+        "type": 1,
+        "protocols": 1,
+        "active": true
+      },
+      {
+        "title": "ezproxy.dev.localdomain",
+        "pattern": "ezproxy.dev.localdomain:*",
         "type": 1,
         "protocols": 1,
         "active": true
