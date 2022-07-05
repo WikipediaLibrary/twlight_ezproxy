@@ -1,4 +1,4 @@
-FROM library/alpine:3.12
+FROM quay.io/wikipedialibrary/alpine:3.12-updated
 
 # EZproxy needs glibc.
 RUN \
