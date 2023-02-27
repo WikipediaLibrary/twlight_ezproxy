@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -eou pipefail
 
+# @TODO: don't store secrets in the clear
 if [ ! -f .env ]
 then
 printf "
@@ -75,9 +76,18 @@ $(cat ${ipfile})"
 # search for logins associated with any dirty ip
 search='https\?://\(.\+\)\?'${host}':.*\?/login?user='
 loginmatches=$(cat ${log_list} | grep ${search} | grep -F -f ${ipfile}) || (echo "no login matches found"; exit 1)
-usernames=$(echo ${loginmatches} | cut -d '=' -f 2 | cut -d '&' -f 1 | uniq) || (echo "${loginmatches}"; exit 1)
+usernames=$(echo "${loginmatches}" | cut -d '=' -f 2 | cut -d '&' -f 1 | uniq) || (echo "${loginmatches}"; exit 1)
 rm ${sessionfile}
 rm ${ipfile}
 
 echo "username matches:"
-echo "${usernames}"
+# @TODO: either find a good way to decode in bash or just port this to python
+if command -v python3 &> /dev/null
+then
+    while IFS= read -r username
+    do
+        python3 -c "from urllib.parse import unquote; print(unquote('${username}'))"
+    done <<< "${usernames}"
+else
+    echo "${usernames}"
+fi
