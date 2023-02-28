@@ -12,6 +12,7 @@ wskey.key
 environment/
 security/
 ssl/
+cookies/
 
 # Contains sensitive authentication configuration.
 ezproxy.usr
