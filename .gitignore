@@ -7,7 +7,7 @@ ezproxy.log
 ezproxy.rnd
 ezproxy-linux.bin
 ezproxy-linux-sha256sum.txt
-messages.txt
+messages-*-*-*.txt
 wskey.key
 environment/
 security/

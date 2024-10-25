@@ -6,3 +6,7 @@ IncludeIP 172.0.0.0/24
 LoginPort 2048
 LoginPortSSL 2443
 IncludeFile ezproxy.cfg
+Audit Most
+LogFormat %h %l %u %t "%r" %s %b
+LogFile -strftime ezp%Y%m%d.log
+LogSPU -strftime spu%Y%m%d.log %{%Y/%m/%d:%H:%M:%S}t %h %u %{ezproxy-spuaccess}i %v %U
