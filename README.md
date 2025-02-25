@@ -9,7 +9,7 @@ See the [EZproxy Documentation](https://help.oclc.org/Library_Management/EZproxy
 ## Configuring proxied resources
 
 Resources are defined in [ezproxy.cfg](expert/ezproxy.cfg).
-OCLC maintains a list of [predefined Database stanzas](https://help.oclc.org/Library_Management/EZproxy/Database_stanzas) which it updates over time.
+OCLC maintains a list of [predefined Database stanzas](https://help.oclc.org/Library_Management/EZproxy/EZproxy_database_stanzas/Database_stanzas) which it updates over time.
 Many of these stanzas are available as include files in the hosted environment.
 When adding or updating a resource, always check for a hosted include file first and simply add a reference to it if possible. 
 If you add a reference to a hosted include file in [ezproxy.cfg](expert/ezproxy.cfg), you must add a corresponding empty file to the expert/databases directory to allow a local ezproxy instance to start.
