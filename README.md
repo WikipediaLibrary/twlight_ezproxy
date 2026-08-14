@@ -48,4 +48,4 @@ If you are just testing resource configuration:
 
 ## Deploying changes to the hosted EZproxy environment
 
-See the [Hosted EZproxy Self-Service Howto](https://help.oclc.org/@api/deki/files/4533/Hosted_EZproxy_Self_Service_How_To.pdf).
+See the [Hosted EZproxy Self-Service Howto](https://help.oclc.org/@api/deki/files/4533/Hosted_EZproxy_Self_Service_How_To.pdf) and the [deployment documentation](DEPLOYMENT.md) for instructions on deploying changes to the hosted EZproxy environment.
