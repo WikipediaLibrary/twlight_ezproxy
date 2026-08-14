@@ -61,4 +61,4 @@ Test the partner URL still works as expected.
 You can validate that the resource groups are correct by logging in to https://wikipedialibrary.idm.oclc.org:9443/groups (preprod) or https://wikipedialibrary.idm.oclc.org/groups (prod).
 
 ## Troubleshooting
-- You may need to log out of both the preprod and prod environments and then log back in to the one you intend to use before attempting to use the admin interfaces.
+- You may need to log out of both the preprod and prod environments and then log back in to the one you intend to use before attempting to use the admin interfaces. You can logout from ezp while keeping your TWL session by going to https://wikipedialibrary.idm.oclc.org:9443/logout (preprod) or https://wikipedialibrary.idm.oclc.org/logout (prod).
